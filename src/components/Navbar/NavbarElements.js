@@ -6,7 +6,6 @@ import {FaBars} from 'react-icons/fa';
 export const Na = styled.nav`
     background: #fff;
     height: 50px;
-    background-color: pink;
     padding: 0px 0px 10px 20px;
     display: flex;
     align-items: center;
@@ -37,7 +36,6 @@ export const NavLink = styled(Link)`
     align-items: center;
     text-decoration: none;
     padding: 20px 70px 20px 40px;
-    background-color: red;
     height: 10px;
     cursor: pointer;
     font-size: 20px;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Schoolintroduction = () => {
+const CreateAccount = () => {
   return (
     <div 
         style={{display: 'flex', 
@@ -9,9 +9,10 @@ const Schoolintroduction = () => {
         height: '90vh'
         }}
     >
-      <h1>Schoolintroduction</h1>
+      <h1>회원가입</h1>
     </div>
   );
 }
 
-export default Schoolintroduction;
+
+export default CreateAccount;

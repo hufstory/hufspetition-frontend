@@ -9,8 +9,8 @@ const Navbar = () => {
         <h1 style={{color: '#000', size: '40px'}}>대학신문고</h1>
       </NavLink>
       <NavBtn>
-        <NavBtnLink to='/signin'>로그인</NavBtnLink>
-        <NavBtnLink to='/signup'>회원가입</NavBtnLink>
+        <NavBtnLink to='/Login'>로그인</NavBtnLink>
+        <NavBtnLink to='/CreateAccount'>회원가입</NavBtnLink>
       </NavBtn>
     </Na>
 
@@ -32,8 +32,8 @@ const Navbar = () => {
         <NavLink to='/end-petition' activeStyle>
           동의종료된 청원
         </NavLink>
-        <NavLink to='/school-introduction' activeStyle>
-          학교소개
+        <NavLink to='/mypage' activeStyle>
+          마이페이지
         </NavLink>
         <NavLink to='/q&a' activeStyle>
           Q&A

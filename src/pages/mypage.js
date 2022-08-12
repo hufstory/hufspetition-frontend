@@ -14,32 +14,33 @@ function GetData() {
     })
   }, []);
 
-  const item = (Object.values(data)).map((Home) => (
-    <CommonTableRow key={Home.id}>
-      <CommonTableColumn>{Home.id}</CommonTableColumn>
+  const item = (Object.values(data)).map((Mypage) => (
+    <CommonTableRow key={Mypage.id}>
+      <CommonTableColumn>{Mypage.id}</CommonTableColumn>
       <CommonTableColumn>
-        <Link to={`/Home/${Home.id}`}>
-          {Home.title}
+        <Link to={`/Mypage/${Mypage.id}`}>
+          {Mypage.title}
         </Link>
       </CommonTableColumn>
-      <CommonTableColumn>{Home.username}</CommonTableColumn>
-      <CommonTableColumn>{Home.num}</CommonTableColumn>
+      <CommonTableColumn>{Mypage.username}</CommonTableColumn>
+      <CommonTableColumn>{Mypage.num}</CommonTableColumn>
     </CommonTableRow>
   ));
 
   return item;
 }
 
-function Home() {
+function Mypage() {
   const item = GetData();
 
   return (<>
 
+    <h1>Mypage</h1>
     <div class="search"><input type="text" placeholder="Enter item to be searched" onChange={(e)=>this.searchSpace(e)} /></div>
-    <h3>인기글 제목표시란</h3>
     <CommonTable headersName={['글번호', '제목', '작성자', '작성일', '조회수']}>
       {item}
     </CommonTable>
   </>);
 }
-export default Home;
+  
+export default Mypage;
