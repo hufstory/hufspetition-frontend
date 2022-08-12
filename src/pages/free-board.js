@@ -41,6 +41,5 @@ function Freeboard() {
       {item}
     </CommonTable>
   </>);
-}
-  
+}  
 export default Freeboard;

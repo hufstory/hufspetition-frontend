@@ -10,7 +10,7 @@ import Petition from "./pages/petition";
 import Endpetition from "./pages/end-petition";
 import Mypage from "./pages/mypage";
 import QA from "./pages/q&a";
-import Login from "./pages/Login";
+import SignIn from "./pages/SignIn";
 import CreateAccount from "./pages/CreateAccount";
 import Connect from "./pages/connect";
 
@@ -27,7 +27,7 @@ function App() {
             <Route path='/end-petition' exact element={<Endpetition />} />
             <Route path='/Mypage' exact element={<Mypage />} />
             <Route path='/q&a' exact element={<QA />} />
-            <Route path='/Login' exact element={<Login />} />
+            <Route path='/SignIn' exact element={<SignIn />} />
             <Route path='/CreateAccount' exact element={<CreateAccount />} />
             <Route path='/connect' exact element={<Connect />} />
         </Routes>
@@ -37,3 +37,5 @@ function App() {
 }
 
 export default App;
+
+

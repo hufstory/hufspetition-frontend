@@ -9,7 +9,7 @@ const Navbar = () => {
         <h1 style={{color: '#000', size: '40px'}}>대학신문고</h1>
       </NavLink>
       <NavBtn>
-        <NavBtnLink to='/Login'>로그인</NavBtnLink>
+        <NavBtnLink to='/SignIn'>로그인</NavBtnLink>
         <NavBtnLink to='/CreateAccount'>회원가입</NavBtnLink>
       </NavBtn>
     </Na>
