@@ -1,8 +1,9 @@
 import React from 'react';
+import Button from '@mui/material/Button';
 
 const Petition = () => {
   return (
-    <div 
+    <div
         style={{display: 'flex', 
         justifyContent:'center', 
         alignItems: 'center', 
@@ -14,4 +15,14 @@ const Petition = () => {
   );
 }
 
+function Article(){
+  return(
+    <article>
+      <h2> 호이호이 </h2>
+      Hello web!
+      <br />
+      <Button variant="outlined">버튼</Button>
+      </article>
+  );
+}
 export default Petition;
