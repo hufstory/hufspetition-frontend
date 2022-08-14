@@ -24,6 +24,7 @@ function GetData() {
       </CommonTableColumn>
       <CommonTableColumn>{Freeboard.username}</CommonTableColumn>
       <CommonTableColumn>{Freeboard.num}</CommonTableColumn>
+      <CommonTableColumn>{Freeboard.username}</CommonTableColumn>
     </CommonTableRow>
   ));
 

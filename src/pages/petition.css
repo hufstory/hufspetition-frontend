@@ -1,0 +1,31 @@
+#title_txt, #link_txt {
+    width: 948px;
+    height: 73px;
+    border-color: #31537A;
+    border-radius: 5px;
+}
+
+#ex_txt {
+    border-color: #31537A;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 948px;
+    height: 600px;
+    resize: none;
+
+}
+
+.title, .link, .content, .submit_btn {
+    margin: 50px 25%;
+}
+
+
+.save, .cancel {
+    background-color: #152C46;
+    color: #ffffff;
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+}

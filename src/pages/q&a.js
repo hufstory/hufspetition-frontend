@@ -24,6 +24,7 @@ function GetData() {
       </CommonTableColumn>
       <CommonTableColumn>{QA.username}</CommonTableColumn>
       <CommonTableColumn>{QA.num}</CommonTableColumn>
+      <CommonTableColumn>{QA.username}</CommonTableColumn>
     </CommonTableRow>
   ));
 
@@ -35,7 +36,7 @@ function QA() {
 
   return (<>
 
-    <h1>Q&A</h1>
+    <h1>QA게시판</h1>
     <div class="search"><input type="text" placeholder="Enter item to be searched" onChange={(e)=>this.searchSpace(e)} /></div>
     <CommonTable headersName={['글번호', '제목', '작성자', '작성일', '조회수']}>
       {item}

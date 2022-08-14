@@ -27,7 +27,6 @@ h1 {
 }
 
 .search {
-  width : 100px;
-  height : 100px;
-  margin: auto;
+  width:200px; 
+  margin: 0 auto;
 }

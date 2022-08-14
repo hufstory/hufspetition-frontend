@@ -24,6 +24,7 @@ function GetData() {
       </CommonTableColumn>
       <CommonTableColumn>{Notice.username}</CommonTableColumn>
       <CommonTableColumn>{Notice.num}</CommonTableColumn>
+      <CommonTableColumn>{Notice.username}</CommonTableColumn>
     </CommonTableRow>
   ));
 

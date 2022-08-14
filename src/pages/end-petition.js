@@ -24,6 +24,7 @@ function GetData() {
       </CommonTableColumn>
       <CommonTableColumn>{Endpetition.username}</CommonTableColumn>
       <CommonTableColumn>{Endpetition.num}</CommonTableColumn>
+      <CommonTableColumn>{Endpetition.username}</CommonTableColumn>
     </CommonTableRow>
   ));
 
