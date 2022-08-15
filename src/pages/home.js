@@ -48,7 +48,7 @@ const tiers = [
       '안녕하십니까 **대 학우 여러분 저는 **대학교 *****학과 **학번 ***이라고 합니다. 다름이 아니라....',
     ],
     buttonText: '청원 동의하러가기',
-    buttonVariant: 'contained',
+    buttonVariant: 'outlined',
   },
   {
     title: '빵차 배차간격에 대해 논의해보고 싶습니다!',
