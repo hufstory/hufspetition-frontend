@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './page.css';
 
 import CommonTable from '../components/table/CommonTable';
 import CommonTableColumn from '../components/table/CommonTableColumn';
@@ -37,8 +38,8 @@ function QA() {
   return (<>
 
     <h1>QA게시판</h1>
-    <div class="search"><input type="text" placeholder="Enter item to be searched" onChange={(e)=>this.searchSpace(e)} /></div>
-    <CommonTable headersName={['글번호', '제목', '작성자', '작성일', '조회수']}>
+    <div class="search"><input id="title_search" type="text" placeholder="Enter item to be searched" onChange={(e)=>this.searchSpace(e)} /></div>
+    <CommonTable headersName={['글번호', '작성자', '제목', '작성일', '조회수']}>
       {item}
     </CommonTable>
   </>);

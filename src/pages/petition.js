@@ -4,6 +4,12 @@ import './petition.css';
 function Petition() {
   return (<>
     <h1>청원하기</h1>
+    <div class="precautions">
+      <h2>청원글 주의사항</h2>
+      <li>제목에 키워드를 써주면 다른사람들에게도 도움이 됩니다.</li>
+      <li>한 번 작성된 글은 삭제와 수정이 불가합니다.</li>
+      <li>다른사람의 욕과 비방글, 허위사실은 무통보로 삭제됩니다.</li>
+    </div>
       <div className='Write'>
           <form onSubmit>
               <div class="title">
@@ -12,7 +18,7 @@ function Petition() {
               </div>
               <div class="content">
                 <h3>내용</h3>
-                <textarea id='ex_txt' name='content_txt' placeholder='설문내용에 대해 설명해주세요'></textarea>    
+                <textarea id='ex_txt' name='content_txt' placeholder='내용을 입력해주세요.'></textarea>    
               </div>
               <div class="link">
                 <h3>첨부파일</h3>

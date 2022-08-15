@@ -18,7 +18,9 @@ textarea {
 }
 
 .title, .link, .content, .submit_btn {
-    margin: 50px 25%;
+    margin: 0 auto;
+    width: 948px;
+    padding: 10px;
 }
 
 
@@ -28,4 +30,11 @@ textarea {
     width: 200px;
     height: 50px;
     border-radius: 15px;
+}
+
+.precautions {
+    width: 948px;
+    height: 150px;
+    background-color: #E1E2E4;
+    margin: 0 auto;
 }
