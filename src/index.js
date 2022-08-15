@@ -11,4 +11,5 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-ServiceWorker.unregister();
+//일단 쓸모없는거 같으니, 삭제(심지어 console창에도..)
+//ServiceWorker.unregister();
