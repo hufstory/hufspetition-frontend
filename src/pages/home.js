@@ -23,7 +23,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        HUFS coder
+        HUFS Coder Team
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -75,24 +75,17 @@ function PricingContent() {
       {/* Hero unit */}
       <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
       {/*검색창*/} 
-      <div class="box">
+      <div class="box" align="center" style={{paddingBottom: 20}}>
         <div class="Container1">
         <span class="icon"><i class="fa fa-search"></i></span>
-        <input type="search" style={{width: 500, height: 50, borderRadius: 30}} id="search" placeholder="  검색어를 입력하세요." /><IoSearch />
+        <input type="search" style={{width: 500, height: 50, borderRadius: 30, paddingLeft: 190}} id="search" placeholder="검색어를 입력하세요." /><IoSearch />
         </div>
       </div>
-      <Typography
-          component="h3"
-          variant="h4"
-          text-align="justify"
-          color="red">
-          HOT!
-        </Typography>
         <Typography 
           variant="h5" 
           align="center" 
           color="text.secondary">
-          기숙사의 수질 검사를 요청합니다!
+          <Typography display="inline" color="red" sx={{ fontSize: 'h6.fontSize' }}>HOT!</Typography> 기숙사의 수질 검사를 요청합니다!
         </Typography>
       </Container>
       {/* End hero unit */}
@@ -132,12 +125,12 @@ function PricingContent() {
                       mb: 2,
                     }}
                   >
-                  <RiHandHeartLine />
-                    <Typography component="h4" color="text.primary">
+                  <RiHandHeartLine style={{paddingLeft: 5}} />
+                    <Typography style={{paddingLeft: 5}} component="h4" color="text.primary">
                       36 
                     </Typography>
-                  <IoChatboxEllipsesOutline />
-                    <Typography component="h4" color="text.primary">
+                  <IoChatboxEllipsesOutline style={{paddingLeft: 5}} />
+                    <Typography style={{paddingLeft: 5}} component="h4" color="text.primary">
                       254
                     </Typography>
                   </Box>
@@ -164,6 +157,7 @@ function PricingContent() {
           ))}
         </Grid>
       </Container>
+      <Copyright sx={{ mt: 5 }} />
       {/* End footer */}
     </React.Fragment>
   );

@@ -78,9 +78,9 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(Link)`
     border-radius: 4px;
-    background: #fff;
+    background: inherit;
     padding: 10px 22px;
-    color: #000;
+    color: inherit;
     border: none;
     outline: none;
     cursor: pointer;
@@ -89,7 +89,7 @@ export const NavBtnLink = styled(Link)`
 
     &:hover {
         transition: all 0.2s ease-in-out;
-        background: #fff;
-        color: #010606;
+        background: inherit;
+        color: inherit;
     }
 `;

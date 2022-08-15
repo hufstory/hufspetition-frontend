@@ -16,7 +16,7 @@ import Connect from "./pages/connect";
 
 
 function App() {
-    const [color] = useState("#EEEEEE");
+    const [color] = useState("#EAE6E2");
 
     document.body.style.backgroundColor = color;
     return (
