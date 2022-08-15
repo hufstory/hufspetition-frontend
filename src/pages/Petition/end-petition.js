@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import './page.css';
 
-import CommonTable from '../components/table/CommonTable';
-import CommonTableColumn from '../components/table/CommonTableColumn';
-import CommonTableRow from '../components/table/CommonTableRow';
+import CommonTable from '../../components/table/CommonTable';
+import CommonTableColumn from '../../components/table/CommonTableColumn';
+import CommonTableRow from '../../components/table/CommonTableRow';
 
 function GetData() {
   const [data, setData] = useState({});
@@ -25,7 +24,6 @@ function GetData() {
       </CommonTableColumn>
       <CommonTableColumn>{Endpetition.username}</CommonTableColumn>
       <CommonTableColumn>{Endpetition.num}</CommonTableColumn>
-      <CommonTableColumn>{Endpetition.username}</CommonTableColumn>
     </CommonTableRow>
   ));
 
@@ -38,8 +36,8 @@ function Endpetition() {
   return (<>
 
     <h1>동의종료된 청원</h1>
-    <div class="search"><input id="title_search" type="text" placeholder="Enter item to be searched" onChange={(e)=>this.searchSpace(e)} /></div>
-    <CommonTable headersName={['글번호', '작성자', '제목', '작성일', '조회수']}>
+    <div class="search"><input type="text" placeholder="Enter item to be searched" onChange={(e)=>this.searchSpace(e)} /></div>
+    <CommonTable headersName={['글번호', '제목', '작성자', '작성일', '조회수']}>
       {item}
     </CommonTable>
   </>);

@@ -6,12 +6,12 @@ import Home from './pages/home';
 import Notice from './pages/notice';
 import Hotboard from "./pages/hot-board";
 import Freeboard from "./pages/free-board";
-import Petition from "./pages/petition";
-import Endpetition from "./pages/end-petition";
+import Petition from "./pages/Petition/petition";
+import Endpetition from "./pages/Petition/end-petition";
 import Mypage from "./pages/mypage";
 import QA from "./pages/q&a";
-import SignIn from "./pages/SignIn";
-import CreateAccount from "./pages/CreateAccount";
+import Login from "./pages/Login/Login";
+import CreateAccount from "./pages/Login/CreateAccount";
 import Connect from "./pages/connect";
 
 
@@ -31,7 +31,7 @@ function App() {
             <Route path='/end-petition' exact element={<Endpetition />} />
             <Route path='/Mypage' exact element={<Mypage />} />
             <Route path='/q&a' exact element={<QA />} />
-            <Route path='/SignIn' exact element={<SignIn />} />
+            <Route path='/SignIn' exact element={<Login />} />
             <Route path='/CreateAccount' exact element={<CreateAccount />} />
             <Route path='/connect' exact element={<Connect />} />
         </Routes>
