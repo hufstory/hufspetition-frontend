@@ -38,7 +38,7 @@ function Freeboard() {
   return (<>
 
     <h1>자유게시판</h1>
-    <div class="search"><input id="title_search" type="text" placeholder="Enter item to be searched" onChange={(e)=>this.searchSpace(e)} /></div>
+    <div class="search" style={{paddingRight: 480}}><input id="title_search" type="text" placeholder="Enter item to be searched" onChange={(e)=>this.searchSpace(e)} /></div>
     <CommonTable headersName={['글번호', '작성자', '제목', '작성일', '조회수']}>
       {item}
     </CommonTable>
