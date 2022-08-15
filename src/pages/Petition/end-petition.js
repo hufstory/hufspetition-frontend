@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-import CommonTable from '../components/table/CommonTable';
-import CommonTableColumn from '../components/table/CommonTableColumn';
-import CommonTableRow from '../components/table/CommonTableRow';
+import CommonTable from '../../components/table/CommonTable';
+import CommonTableColumn from '../../components/table/CommonTableColumn';
+import CommonTableRow from '../../components/table/CommonTableRow';
 
 function GetData() {
   const [data, setData] = useState({});
