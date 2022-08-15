@@ -13,6 +13,9 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
+import { IoSearch } from "react-icons/io5";
+import { IoChatboxEllipsesOutline } from "react-icons/io5";
+import { RiHandHeartLine } from "react-icons/ri";
 
 
 function Copyright(props) {
@@ -49,7 +52,7 @@ const tiers = [
   },
   {
     title: '빵차 배차간격에 대해 논의해보고 싶습니다!',
-    subheader: 'li5h****',
+    subheader: '작성자: li5h****',
     description: [
       '한국외국어대학교 글로벌캠퍼스에는 빵차가 다니고 있지만'  ],
     buttonText: '청원 동의하러가기',
@@ -75,7 +78,7 @@ function PricingContent() {
       <div class="box">
         <div class="Container1">
         <span class="icon"><i class="fa fa-search"></i></span>
-        <input type="search" style={{width: 500, height: 50, borderRadius: 30}} id="search" placeholder="  검색어를 입력하세요." />
+        <input type="search" style={{width: 500, height: 50, borderRadius: 30}} id="search" placeholder="  검색어를 입력하세요." /><IoSearch />
         </div>
       </div>
       <Typography
@@ -129,8 +132,13 @@ function PricingContent() {
                       mb: 2,
                     }}
                   >
+                  <RiHandHeartLine />
                     <Typography component="h4" color="text.primary">
-                      공감수:
+                      36 
+                    </Typography>
+                  <IoChatboxEllipsesOutline />
+                    <Typography component="h4" color="text.primary">
+                      254
                     </Typography>
                   </Box>
                   <ul>
