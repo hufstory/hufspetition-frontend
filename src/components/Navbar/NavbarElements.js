@@ -23,11 +23,7 @@ export const Nav = styled.nav`
     padding: 0.5rem calc((100vw - 2000px) / 2);
     z-index: 10;
 `;
-/* 글자크기 변경 실패
-export const h1 = styled.nav`
-    pont-size: 1000px;
-`;
-*/
+
 
 /*게시판카테고리line*/
 export const NavLink = styled(Link)`
@@ -38,23 +34,9 @@ export const NavLink = styled(Link)`
     padding: 20px 70px 20px 40px;
     height: 10px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 21px;
     white-space: nowrap;
 
-`;
-
-/* 검색기능*/
-export const Search = styled.div`
-    box-sizing: border-box;
-    position: absolute;
-    width: 675px;
-    height: 44px;
-    left: 386px;
-    top: 214px;
-    background: #FFFFFF;
-    border: 2px solid #31537A;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
 `;
 
 /*???*/
@@ -112,5 +94,3 @@ export const NavBtnLink = styled(Link)`
         color: #010606;
     }
 `;
-
-

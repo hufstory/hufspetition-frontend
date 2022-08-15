@@ -1,61 +1,166 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
+import CssBaseline from '@mui/material/CssBaseline';
+import Grid from '@mui/material/Grid';
+import StarIcon from '@mui/icons-material/StarBorder';
+import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
+import GlobalStyles from '@mui/material/GlobalStyles';
+import Container from '@mui/material/Container';
 
 
-import CommonTable from '../components/table/CommonTable';
-import CommonTableColumn from '../components/table/CommonTableColumn';
-import CommonTableRow from '../components/table/CommonTableRow';
-import styled from 'styled-components'
-
-
-function GetData() {
-  const [data, setData] = useState({});
-  useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/users').then((response)=> {
-      setData(response.data);
-    })
-  }, []);
-
-  const item = (Object.values(data)).map((Home) => (
-    <CommonTableRow key={Home.id}>
-      <CommonTableColumn>{Home.id}</CommonTableColumn>
-      <CommonTableColumn>
-        <Link to={`/Home/${Home.id}`}>
-          {Home.title}
-        </Link>
-      </CommonTableColumn>
-      <CommonTableColumn>{Home.username}</CommonTableColumn>
-      <CommonTableColumn>{Home.num}</CommonTableColumn>
-    </CommonTableRow>
-  ));
-
-  return item;
+function Copyright(props) {
+  return (
+    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        HUFS coder
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
 }
 
-const SimpleButton = styled.button`
-  color:white;
-  background-color: pink;
-`;
-function Home() {
-  const item = GetData();
+const tiers = [
+  {
+    title: '기숙사 수질 검사를 요청합니다!',
+    subheader: '작성자:yys3****',
+    description: [
+      '기숙사를 사용하고 있는데 샤워기 필터기가 2주만 되도 너무 더러워져요ㅠㅠ 물이 너무 더러워요!! 수질 검사를 요청합니다.',
+    ],
+    buttonText: '청원 동의하러가기',
+    buttonVariant: 'outlined',
+  },
+  {
+    title: '몇일 전 학교 후생관에서 ****한 일을 고발합니다.',
+    subheader: '작성자:gttk0****',
+    description: [
+      '안녕하십니까 **대 학우 여러분 저는 **대학교 *****학과 **학번 ***이라고 합니다. 다름이 아니라....',
+    ],
+    buttonText: '청원 동의하러가기',
+    buttonVariant: 'contained',
+  },
+  {
+    title: '빵차 배차간격에 대해 논의해보고 싶습니다!',
+    subheader: 'li5h****',
+    description: [
+      '한국외국어대학교 글로벌캠퍼스에는 빵차가 다니고 있지만'  ],
+    buttonText: '청원 동의하러가기',
+    buttonVariant: 'outlined',
+  },
+];
 
-  return (<>
-
-    <h1>Home</h1>
-    <div class="search"><input type="text" placeholder="검색어를 입력하세요." onChange={(e)=>this.searchSpace(e)} /></div>
-    <h3 color={'blue'}>HOT!   기숙사가 너무 더워요! 에어컨 틀어주세요!</h3>
-    <>
-    <SimpleButton>안녕하세요</SimpleButton>
-    <SimpleButton>버튼씨</SimpleButton>
-    <SimpleButton>헐우와</SimpleButton>
-    <SimpleButton>기쁘다</SimpleButton>
-    </>
-    <CommonTable headersName={['글번호', '작성자', '제목', '작성일', '조회수']}>
-      {item}
-    </CommonTable>
-  </>);
+function PricingContent() {
+  return (
+    <React.Fragment>
+      <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
+      <CssBaseline />
+      <AppBar
+        position="static"
+        color="default"
+        elevation={0}
+        sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
+      >
+      </AppBar>
+      {/* Hero unit */}
+      <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
+      {/*검색창*/} 
+      <div class="box">
+        <div class="Container1">
+        <span class="icon"><i class="fa fa-search"></i></span>
+        <input type="search" style={{width: 500, height: 50, borderRadius: 30}} id="search" placeholder="  검색어를 입력하세요." />
+        </div>
+      </div>
+      <Typography
+          component="h3"
+          variant="h4"
+          text-align="justify"
+          color="red">
+          HOT!
+        </Typography>
+        <Typography 
+          variant="h5" 
+          align="center" 
+          color="text.secondary">
+          기숙사의 수질 검사를 요청합니다!
+        </Typography>
+      </Container>
+      {/* End hero unit */}
+      <Container maxWidth="md" component="main">
+        <Grid container spacing={5} alignItems="flex-end">
+          {tiers.map((tier) => (
+            // Enterprise card is full width at sm breakpoint
+            <Grid
+              item
+              key={tier.title}
+              xs={12}
+              sm={tier.title === 'Enterprise' ? 12 : 6}
+              md={4}
+            >
+              <Card>
+                <CardHeader
+                  title={tier.title}
+                  subheader={tier.subheader}
+                  titleTypographyProps={{ align: 'center' }}
+                  action={tier.title === 'Pro' ? <StarIcon /> : null}
+                  subheaderTypographyProps={{
+                    align: 'center',
+                  }}
+                  sx={{
+                    backgroundColor: (theme) =>
+                      theme.palette.mode === 'light'
+                        ? theme.palette.grey[200]
+                        : theme.palette.grey[700],
+                  }}
+                />
+                <CardContent>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'baseline',
+                      mb: 2,
+                    }}
+                  >
+                    <Typography component="h4" color="text.primary">
+                      공감수:
+                    </Typography>
+                  </Box>
+                  <ul>
+                    {tier.description.map((line) => (
+                      <Typography
+                        component="li"
+                        variant="subtitle1"
+                        align="center"
+                        key={line}
+                      >
+                        {line}
+                      </Typography>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardActions>
+                  <Button fullWidth variant={tier.buttonVariant}>
+                    {tier.buttonText}
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+      {/* End footer */}
+    </React.Fragment>
+  );
 }
 
-export default Home;
-
+export default function Pricing() {
+  return <PricingContent />;
+}

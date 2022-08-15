@@ -1,87 +1,186 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-
-
-import CommonTableColumn from '../components/table/CommonTableColumn';
-import CommonTableRow from '../components/table/CommonTableRow';
-import styled from 'styled-components'
-
-
-function GetData() {
-  const [data, setData] = useState({});
-  useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/users').then((response)=> {
-      setData(response.data);
-    })
-  }, []);
-
-  const item = (Object.values(data)).map((CreateAccount) => (
-    <CommonTableRow key={CreateAccount.id}>
-      <CommonTableColumn>{CreateAccount.id}</CommonTableColumn>
-      <CommonTableColumn>
-        <Link to={`/CreateAccount/${CreateAccount.id}`}>
-          {CreateAccount.title}
-        </Link>
-      </CommonTableColumn>
-      <CommonTableColumn>{CreateAccount.username}</CommonTableColumn>
-      <CommonTableColumn>{CreateAccount.num}</CommonTableColumn>
-    </CommonTableRow>
-  ));
-
-  return item;
-}
-/*
-const Checkbox = styled.button`
-`;
-*/
-const SimpleButton = styled.button`
-  font-size:20px;
-  color:white;
-  background-color: #152C46;
-`;
-/*
-const LargeButton = styled(SimpleButton)`
-  font-size:30px;
-  color:gray;
-  background-color: #EEEEEE;
-`;
-*/
-const Button = styled(SimpleButton)`
-  font-size:23px;
-  color:gray;
-  background-color: #EEEEEE;
-`;
-
-function CreateAccount() {
-  const item = GetData();
-
-  return (<>
-  <p>
-    <ul>
-    <h1>회원가입</h1>
-      <li>이름</li>
-      <Button variant="outlined">본인의 이름을 입력해주세요.</Button>
-      <p></p>
-      <li>인증받을 이메일을 입력해주세요.</li>
-      <Button>이메일</Button>
-      <p></p>
-      <li>사용할 아이디를 입력해주세요.</li>
-      <Button>아이디</Button>
-      <p></p>
-      <li>사용할 비밀번호를 입력해주세요.</li>
-      <Button>비밀번호</Button>
-      <p></p>
-      <li>입력하신 비밀번호를 다시 입력해주세요.</li>
-      <Button>비밀번호 확인</Button>
-      <p></p>
-      <li><input type="Checkbox" />이용약관 및 개인정보처리방침에 동의합니다.</li>
-      <p></p><SimpleButton>회원가입</SimpleButton>
-    </ul>
-  </p>
-    
-  </>
+function Copyright(props) {
+  return (
+    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        HUFS coder
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
   );
 }
-export default CreateAccount;
+
+const footers = [
+  {
+    title: '박정민',
+    description: ['이거', '저거', 'Contact us', 'Locations'],
+  },
+  {
+    title: '요리',
+    description: [
+      '조리',
+      '둘리',
+      'Team feature',
+      'Developer stuff',
+      'Another one',
+    ],
+  },
+  {
+    title: '호이',
+    description: ['호잏', 'Resource name', 'Another resource', 'Final resource'],
+  },
+  {
+    title: '복숭아',
+    description: ['하이라이트', 'Terms of use'],
+  },
+];
+
+const theme = createTheme();
+
+export default function SignUp() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get('email'),
+      password: data.get('password'),
+    });
+  };
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign up
+          </Typography>
+          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  autoComplete="given-name"
+                  name="firstName"
+                  required
+                  fullWidth
+                  id="firstName"
+                  label="First Name"
+                  autoFocus
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  required
+                  fullWidth
+                  id="lastName"
+                  label="Last Name"
+                  name="lastName"
+                  autoComplete="family-name"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  autoComplete="email"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="new-password"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <FormControlLabel
+                  control={<Checkbox value="allowExtraEmails" color="primary" />}
+                  label="I want to receive inspiration, marketing promotions and updates via email."
+                />
+              </Grid>
+            </Grid>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Sign Up
+            </Button>
+            <Grid container justifyContent="flex-end">
+              <Grid item>
+                <Link href="#" variant="body2">
+                  Already have an account? Sign in
+                </Link>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+        <Copyright sx={{ mt: 5 }} />
+      </Container>
+        {/* Footer */}
+      <Container
+        maxWidth="md"
+        component="footer"
+        sx={{
+          borderTop: (theme) => `1px solid ${theme.palette.divider}`,
+          mt: 8,
+          py: [3, 6],
+        }}
+      >
+        <Grid container spacing={4} justifyContent="space-evenly">
+          {footers.map((footer) => (
+            <Grid item xs={6} sm={3} key={footer.title}>
+              <Typography variant="h6" color="text.primary" gutterBottom>
+                {footer.title}
+              </Typography>
+              <ul>
+                {footer.description.map((item) => (
+                  <li key={item}>
+                    <Link href="#" variant="subtitle1" color="text.secondary">
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </Grid>
+          ))}
+        </Grid>
+        <Copyright sx={{ mt: 5 }} />
+      </Container>
+    </ThemeProvider>
+  );
+}

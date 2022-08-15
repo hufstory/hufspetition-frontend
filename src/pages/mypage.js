@@ -35,9 +35,8 @@ function Mypage() {
 
   return (<>
 
-    <h1>Mypage</h1>
-    <div class="search"><input type="text" placeholder="Enter item to be searched" onChange={(e)=>this.searchSpace(e)} /></div>
-    <CommonTable headersName={['글번호', '제목', '작성자', '작성일', '조회수']}>
+    <h1>My page</h1>
+    <CommonTable headersName={['글번호', '작성자', '제목', '작성일', '조회수']}>
       {item}
     </CommonTable>
   </>);

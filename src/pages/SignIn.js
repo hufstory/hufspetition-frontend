@@ -1,61 +1,110 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-
-import CommonTable from '../components/table/CommonTable';
-import CommonTableColumn from '../components/table/CommonTableColumn';
-import CommonTableRow from '../components/table/CommonTableRow';
-import styled from 'styled-components'
-
-
-function GetData() {
-  const [data, setData] = useState({});
-  useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/users').then((response)=> {
-      setData(response.data);
-    })
-  }, []);
-
-  const item = (Object.values(data)).map((CreateAccount) => (
-    <CommonTableRow key={CreateAccount.id}>
-      <CommonTableColumn>{CreateAccount.id}</CommonTableColumn>
-      <CommonTableColumn>
-        <Link to={`/CreateAccount/${CreateAccount.id}`}>
-          {CreateAccount.title}
-        </Link>
-      </CommonTableColumn>
-      <CommonTableColumn>{CreateAccount.username}</CommonTableColumn>
-      <CommonTableColumn>{CreateAccount.num}</CommonTableColumn>
-    </CommonTableRow>
-  ));
-
-  return item;
+function Copyright(props) {
+  return (
+    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      {'Copyright Â© '}
+      <Link color="inherit" href="https://mui.com/">
+        HUFS Coder Team
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
 }
 
-const SimpleButton = styled.button`
-  font-size:25px;
-  color:white;
-  background-color: #152C46;
-`;
-const LargeButton = styled(SimpleButton)`
-  font-size:30px;
-  color:gray;
-  background-color: #EEEEEE;
-`;
-function SignIn() {
-  const item = GetData();
+const theme = createTheme();
 
-  return (<>
-  <p>
-    <ol>
-      <h1>로그인</h1>
-      <LargeButton>아이디를 입력해주세요</LargeButton>
-      <p><LargeButton>비밀번호를 입력해주세요</LargeButton></p>
-      <>아이디찾기</> <>비밀번호찾기</> <SimpleButton>로그인</SimpleButton>
+export default function Login() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get('email'),
+      password: data.get('password'),
+    });
+  };
 
-    </ol>
-  </p> 
-  </>);
+  return (
+    <ThemeProvider theme={theme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign in
+          </Typography>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Sign In
+            </Button>
+            <Grid container>
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  Forgot password?
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="#" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+        <Copyright sx={{ mt: 8, mb: 4 }} />
+      </Container>
+    </ThemeProvider>
+  );
 }
-export default SignIn;
