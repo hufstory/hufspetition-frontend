@@ -143,7 +143,7 @@ function  validatePetitionMsg(petitionmsg, errors)
       errors.petitionmsg = "내용물은 최소한 50자 이상이어합니다.";
       result = false;
     }
-    else if (petitionmsg.length < 501) 
+    else if (petitionmsg.length > 501) 
     {
       errors.petitionmsg = "내용물은 최대 500자입니다!";
       result = false;
