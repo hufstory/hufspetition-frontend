@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
@@ -16,6 +16,9 @@ import Connect from "./pages/connect";
 
 
 function App() {
+    const [color] = useState("#EEEEEE");
+
+    document.body.style.backgroundColor = color;
     return (
         <Router>
             <Navbar />

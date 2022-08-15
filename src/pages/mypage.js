@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './page.css';
 
 import CommonTable from '../components/table/CommonTable';
 import CommonTableColumn from '../components/table/CommonTableColumn';
@@ -35,8 +36,8 @@ function Mypage() {
 
   return (<>
 
-    <h1>My page</h1>
-    <CommonTable headersName={['글번호', '작성자', '제목', '작성일', '조회수']}>
+    <h1>Mypage</h1>
+    <CommonTable headersName={['글번호', '제목', '작성자', '작성일', '조회수']}>
       {item}
     </CommonTable>
   </>);

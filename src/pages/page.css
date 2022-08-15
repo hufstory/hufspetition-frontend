@@ -1,0 +1,17 @@
+#title_search {
+    width: 675px;
+    height: 44px;
+    border-radius: 5px;
+    box-shadow: 3px 3px gray;
+    border-color: gray;
+}
+
+#title_search:focus {
+    outline: none;
+}
+
+.search {
+    margin:0 auto;
+    width: 675px;
+    padding: 20px;
+}

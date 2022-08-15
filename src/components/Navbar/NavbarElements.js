@@ -4,7 +4,6 @@ import {FaBars} from 'react-icons/fa';
 
 /*사이트명&로그인 배경*/
 export const Na = styled.nav`
-    background: #fff;
     height: 50px;
     padding: 0px 0px 10px 20px;
     display: flex;
