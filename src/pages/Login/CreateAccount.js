@@ -54,12 +54,17 @@ export default function CreateAccount() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
 
-    axios.post('http://127.0.0.1/login/register', // 회원가입 API 요청
-    {
-      email: data.email,  // 이메일 보내기
-      password: data.password, // 비밀번호 보내기
-      SchoolID: 123456789 // 일단 공모전때는 학번없기 때문에 임시로 123456789 처리하기
-    })
+    const options = {
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        "Accept": "application/json" }
+    }
+
+
+    axios.post('http://127.0.0.1/register/', // 회원가입 API 요청
+      {email: data.get('email'),  // 이메일 보내기
+      password: data.get('password') // 비밀번호 보내기
+      //SchoolID: '123456789' // 일단 공모전때는 학번없기 때문에 임시로 123456789 처리하기
+  }, options)
     .then((res)=>
     {
       if(res.status === 200) //만약에 서버가 성공적인 response를 보냈다면
